@@ -24,15 +24,13 @@ To learn how to verify C++ code automatically with Google Test by writing unit t
 
 ```
 GTest_Lab/
-├── CalculatorProject/                 demo
-├── StudentGradeProject_Student/       task (starter)
-├── StudentGradeProject_Instructor/    task (solution)
-├── TriangleProject_Student/           homework (starter)
-├── TriangleProject_Instructor/        homework (solution)
-└── outputs/                           real run outputs used below
+├── CalculatorProject/
+├── StudentGradeProject/
+├── TriangleProject/
+└── outputs/                           run outputs used below
 ```
 
-## 4. Part A — Calculator (demonstration)
+## 4. Part A — Calculator
 
 ### 4.1 Code
 
@@ -219,7 +217,7 @@ Expected equality of these values:
 
 **Analysis:** `CalculatorTest.Multiplication` failed on three lines (`multiply(5,4)` gave 9, `multiply(-5,4)` gave -1, `multiply(10,0)` gave 10). The other four tests still passed, so the failure points straight at `multiply()`. After restoring `a * b`, all 5 tests pass again.
 
-## 5. Part B — StudentGrade task
+## 5. Part B — StudentGrade
 
 ### 5.1 Specification
 
@@ -396,42 +394,7 @@ int main(int argc, char **argv) {
 }
 ```
 
-### 5.4 Starter code (red stage, placeholders not yet implemented)
-
-```text
-[==========] Running 2 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 2 tests from StudentGradeTest
-[ RUN      ] StudentGradeTest.TotalMarks
-student_grade_test.cpp:11: Failure
-Expected equality of these values:
-  student.total(80, 70, 90)
-    Which is: 0
-  240
-
-[  FAILED  ] StudentGradeTest.TotalMarks (0 ms)
-[ RUN      ] StudentGradeTest.AverageMarks
-student_grade_test.cpp:17: Failure
-Expected equality of these values:
-  student.average(80, 70, 90)
-    Which is: 0
-  80.0
-    Which is: 80
-
-[  FAILED  ] StudentGradeTest.AverageMarks (0 ms)
-[----------] 2 tests from StudentGradeTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 2 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 0 tests.
-[  FAILED  ] 2 tests, listed below:
-[  FAILED  ] StudentGradeTest.TotalMarks
-[  FAILED  ] StudentGradeTest.AverageMarks
-
- 2 FAILED TESTS
-```
-
-### 5.5 Final output (green stage)
+### 5.4 Output (all tests pass)
 
 ```text
 [==========] Running 8 tests from 1 test suite.
@@ -460,7 +423,7 @@ Expected equality of these values:
 [  PASSED  ] 8 tests.
 ```
 
-### 5.6 Test coverage
+### 5.5 Test coverage
 
 | # | Test | Covers |
 |---|---|---|
@@ -473,7 +436,7 @@ Expected equality of these values:
 | 7 | `GradeBoundaryValues` | 80/79, 70/69, 60/59, 50/49, 0, 100 |
 | 8 | `InvalidMarks` | -1, 101, 120, -10 in every position, `grade(-1)`, `grade(100.5)` |
 
-## 6. Part C — Homework: Unit Testing of the Triangle Program
+## 6. Part C — Unit Testing of the Triangle Program
 
 ### 6.1 Specification
 
@@ -703,40 +666,7 @@ g++ triangle.cpp triangle_test.cpp -lgtest -pthread -o triangle_test
 ./triangle_test
 ```
 
-### 6.6 Starter code (red stage)
-
-```text
-[==========] Running 2 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 2 tests from TriangleTest
-[ RUN      ] TriangleTest.EquilateralTriangle
-triangle_test.cpp:9: Failure
-Value of: t.isValid(5, 5, 5)
-  Actual: false
-Expected: true
-
-triangle_test.cpp:10: Failure
-Expected equality of these values:
-  t.getType(5, 5, 5)
-    Which is: ""
-  "Equilateral"
-
-[  FAILED  ] TriangleTest.EquilateralTriangle (0 ms)
-[ RUN      ] TriangleTest.InvalidTriangle
-[       OK ] TriangleTest.InvalidTriangle (0 ms)
-[----------] 2 tests from TriangleTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 2 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 1 test.
-[  FAILED  ] 1 test, listed below:
-[  FAILED  ] TriangleTest.EquilateralTriangle
-
- 1 FAILED TEST
-...
-```
-
-### 6.7 Final output (all 14 tests pass)
+### 6.6 Output (all 14 tests pass)
 
 ```text
 [==========] Running 14 tests from 1 test suite.
@@ -777,7 +707,7 @@ Expected equality of these values:
 [  PASSED  ] 14 tests.
 ```
 
-### 6.8 Bug-finding activity
+### 6.7 Bug-finding activity
 
 **Bug introduced** in `triangle.cpp`:
 
@@ -894,7 +824,7 @@ Expected: false
 | Defective statement | the three `>=` comparisons in `isValid()` |
 | Which test detected it first | `InvalidTriangle` (1,2,3), and `EqualBoundaryCase` (2,2,4) |
 | Fix | change `>=` back to `>` |
-| After fix | all 14 tests pass (section 6.7) |
+| After fix | all 14 tests pass (section 6.6) |
 
 **Why boundary testing mattered:** `(1,1,5)` passes even with the bug because it is far from the limit. Only inputs where the sum is **exactly equal** to the third side (the degenerate triangles `(1,2,3)` and `(2,2,4)`) reveal it.
 
@@ -903,10 +833,8 @@ Expected: false
 | Project | Tests | Result |
 |---|---|---|
 | Calculator | 5 | all passed |
-| StudentGrade (solution) | 8 | all passed |
-| StudentGrade (starter) | 2 | fail until implemented (intended) |
-| Triangle (solution) | 14 | all passed |
-| Triangle (starter) | 2 | 1 fails until implemented (intended; the placeholder `false` accidentally satisfies the invalid-triangle test) |
+| StudentGrade | 8 | all passed |
+| Triangle | 14 | all passed |
 | Calculator with `multiply` bug | 5 | 1 failed (bug detected) |
 | Triangle with `>=` bug | 14 | 4 failed (bug detected) |
 
