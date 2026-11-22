@@ -9,7 +9,7 @@ bool Triangle::isValid(int a, int b, int c) {
     // Triangle inequality: the sum of any two sides must be GREATER than the third.
     // long long avoids integer overflow for very large sides (e.g. INT_MAX).
     long long x = a, y = b, z = c;
-    return (x + y > z) && (x + z > y) && (y + z > x);
+    return (x + y >= z) && (x + z >= y) && (y + z >= x);
 }
 
 std::string Triangle::getType(int a, int b, int c) {
