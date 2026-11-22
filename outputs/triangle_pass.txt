@@ -1,0 +1,36 @@
+[==========] Running 14 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 14 tests from TriangleTest
+[ RUN      ] TriangleTest.EquilateralTriangle
+[       OK ] TriangleTest.EquilateralTriangle (0 ms)
+[ RUN      ] TriangleTest.IsoscelesTriangle
+[       OK ] TriangleTest.IsoscelesTriangle (0 ms)
+[ RUN      ] TriangleTest.ScaleneTriangle
+[       OK ] TriangleTest.ScaleneTriangle (0 ms)
+[ RUN      ] TriangleTest.InvalidTriangle
+[       OK ] TriangleTest.InvalidTriangle (0 ms)
+[ RUN      ] TriangleTest.InvalidTriangleSumTooSmall
+[       OK ] TriangleTest.InvalidTriangleSumTooSmall (0 ms)
+[ RUN      ] TriangleTest.EqualBoundaryCase
+[       OK ] TriangleTest.EqualBoundaryCase (0 ms)
+[ RUN      ] TriangleTest.DifferentOrder
+[       OK ] TriangleTest.DifferentOrder (0 ms)
+[ RUN      ] TriangleTest.ZeroSide
+[       OK ] TriangleTest.ZeroSide (0 ms)
+[ RUN      ] TriangleTest.NegativeSide
+[       OK ] TriangleTest.NegativeSide (0 ms)
+[ RUN      ] TriangleTest.IsoscelesAnyOrder
+[       OK ] TriangleTest.IsoscelesAnyOrder (0 ms)
+[ RUN      ] TriangleTest.InvalidAnyOrder
+[       OK ] TriangleTest.InvalidAnyOrder (0 ms)
+[ RUN      ] TriangleTest.SmallestValidTriangles
+[       OK ] TriangleTest.SmallestValidTriangles (0 ms)
+[ RUN      ] TriangleTest.AllZeroAndAllNegative
+[       OK ] TriangleTest.AllZeroAndAllNegative (0 ms)
+[ RUN      ] TriangleTest.LargeValuesNoOverflow
+[       OK ] TriangleTest.LargeValuesNoOverflow (0 ms)
+[----------] 14 tests from TriangleTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 14 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 14 tests.

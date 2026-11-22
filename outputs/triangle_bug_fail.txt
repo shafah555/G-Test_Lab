@@ -1,0 +1,90 @@
+[==========] Running 14 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 14 tests from TriangleTest
+[ RUN      ] TriangleTest.EquilateralTriangle
+[       OK ] TriangleTest.EquilateralTriangle (0 ms)
+[ RUN      ] TriangleTest.IsoscelesTriangle
+[       OK ] TriangleTest.IsoscelesTriangle (0 ms)
+[ RUN      ] TriangleTest.ScaleneTriangle
+[       OK ] TriangleTest.ScaleneTriangle (0 ms)
+[ RUN      ] TriangleTest.InvalidTriangle
+triangle_test.cpp:36: Failure
+Value of: t.isValid(1, 2, 3)
+  Actual: true
+Expected: false
+
+triangle_test.cpp:37: Failure
+Expected equality of these values:
+  t.getType(1, 2, 3)
+    Which is: "Scalene"
+  "Invalid"
+
+[  FAILED  ] TriangleTest.InvalidTriangle (0 ms)
+[ RUN      ] TriangleTest.InvalidTriangleSumTooSmall
+[       OK ] TriangleTest.InvalidTriangleSumTooSmall (0 ms)
+[ RUN      ] TriangleTest.EqualBoundaryCase
+triangle_test.cpp:52: Failure
+Value of: t.isValid(2, 2, 4)
+  Actual: true
+Expected: false
+
+triangle_test.cpp:53: Failure
+Expected equality of these values:
+  t.getType(2, 2, 4)
+    Which is: "Isosceles"
+  "Invalid"
+
+[  FAILED  ] TriangleTest.EqualBoundaryCase (0 ms)
+[ RUN      ] TriangleTest.DifferentOrder
+[       OK ] TriangleTest.DifferentOrder (0 ms)
+[ RUN      ] TriangleTest.ZeroSide
+[       OK ] TriangleTest.ZeroSide (0 ms)
+[ RUN      ] TriangleTest.NegativeSide
+[       OK ] TriangleTest.NegativeSide (0 ms)
+[ RUN      ] TriangleTest.IsoscelesAnyOrder
+[       OK ] TriangleTest.IsoscelesAnyOrder (0 ms)
+[ RUN      ] TriangleTest.InvalidAnyOrder
+triangle_test.cpp:101: Failure
+Value of: t.isValid(1, 2, 3)
+  Actual: true
+Expected: false
+
+triangle_test.cpp:102: Failure
+Value of: t.isValid(1, 3, 2)
+  Actual: true
+Expected: false
+
+triangle_test.cpp:103: Failure
+Value of: t.isValid(3, 1, 2)
+  Actual: true
+Expected: false
+
+triangle_test.cpp:104: Failure
+Value of: t.isValid(2, 3, 1)
+  Actual: true
+Expected: false
+
+[  FAILED  ] TriangleTest.InvalidAnyOrder (0 ms)
+[ RUN      ] TriangleTest.SmallestValidTriangles
+triangle_test.cpp:115: Failure
+Value of: t.isValid(2, 2, 4)
+  Actual: true
+Expected: false
+
+[  FAILED  ] TriangleTest.SmallestValidTriangles (0 ms)
+[ RUN      ] TriangleTest.AllZeroAndAllNegative
+[       OK ] TriangleTest.AllZeroAndAllNegative (0 ms)
+[ RUN      ] TriangleTest.LargeValuesNoOverflow
+[       OK ] TriangleTest.LargeValuesNoOverflow (0 ms)
+[----------] 14 tests from TriangleTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 14 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 10 tests.
+[  FAILED  ] 4 tests, listed below:
+[  FAILED  ] TriangleTest.InvalidTriangle
+[  FAILED  ] TriangleTest.EqualBoundaryCase
+[  FAILED  ] TriangleTest.InvalidAnyOrder
+[  FAILED  ] TriangleTest.SmallestValidTriangles
+
+ 4 FAILED TESTS

@@ -1,0 +1,40 @@
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from CalculatorTest
+[ RUN      ] CalculatorTest.Addition
+[       OK ] CalculatorTest.Addition (0 ms)
+[ RUN      ] CalculatorTest.Subtraction
+[       OK ] CalculatorTest.Subtraction (0 ms)
+[ RUN      ] CalculatorTest.Multiplication
+calculator_test.cpp:26: Failure
+Expected equality of these values:
+  calc.multiply(5, 4)
+    Which is: 9
+  20
+
+calculator_test.cpp:27: Failure
+Expected equality of these values:
+  calc.multiply(-5, 4)
+    Which is: -1
+  -20
+
+calculator_test.cpp:28: Failure
+Expected equality of these values:
+  calc.multiply(10, 0)
+    Which is: 10
+  0
+
+[  FAILED  ] CalculatorTest.Multiplication (0 ms)
+[ RUN      ] CalculatorTest.Division
+[       OK ] CalculatorTest.Division (0 ms)
+[ RUN      ] CalculatorTest.DivisionByZero
+[       OK ] CalculatorTest.DivisionByZero (0 ms)
+[----------] 5 tests from CalculatorTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 4 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] CalculatorTest.Multiplication
+
+ 1 FAILED TEST
